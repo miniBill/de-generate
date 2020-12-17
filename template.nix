@@ -4,7 +4,7 @@
   
   name = "template-env";
   targetPkgs = pkgs: with pkgs; [
-    coreutils git python35Full nix-index
+    coreutils git python36Full nix-index
   ];
   multiPkgs = pkgs: with pkgs; [
 
