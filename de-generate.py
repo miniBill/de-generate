@@ -45,7 +45,7 @@ def scan(path_string, libs=[], all_files_param=set()):
             all_files.add(child.name)
             if os.access(str(child), os.X_OK):
                 try:
-                    output = sp.check_output('ldd {} 2>&1 | grep "not found"'.format(child), shell=True, stderr=sp.STDOUT, universal_newlines=True)
+                    output = sp.check_output('ldd "{}" 2>&1 | grep "not found"'.format(child), shell=True, stderr=sp.STDOUT, universal_newlines=True)
                     output = output.splitlines()
                     notfound_libraries.extend(output)
                 except OSError as e:
